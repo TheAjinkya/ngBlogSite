@@ -1,0 +1,35 @@
+
+<div class="container">
+    <div class="row">
+      <div class="col-3"></div>
+      <div class="col-6">
+        <mat-card>
+        <form class="example-form">
+            <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>Title</mat-label>
+              <input matInput [(ngModel)]='title' name='title' placeholder="Top 10 Recipes for the cupcake">
+            </mat-form-field>
+          
+            <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>Content</mat-label>
+              <textarea [(ngModel)]='content' name='content' matInput></textarea>
+            </mat-form-field>
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Image URL</mat-label>
+                <input matInput [(ngModel)]='image' name='image' matInput/>
+              </mat-form-field>
+          </form>
+          </mat-card>
+          <mat-card>
+          <mat-card-actions align="end">
+              <button [disabled]='!title.length' (click)='postBlog()' mat-raised-button color="primary">Post</button><br/>
+              <button (click)='previewBlog()' mat-raised-button color="primary">Preview</button>
+            </mat-card-actions>
+        </mat-card>
+          </div>
+      <div class="col-3"></div>
+    </div>
+</div>
+
+
+
