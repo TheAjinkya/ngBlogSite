@@ -31,8 +31,8 @@ export class CreateComponent implements OnInit {
 
   postBlog() {
     const dialogRef = this.dialog.open(DialogBoxComponent, {
-      // height: '30%',
-      // width: '25%',
+      height: '30%',
+      width: '25%',
       data: {
         title: this.title,
         content: this.content,
