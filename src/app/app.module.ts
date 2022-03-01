@@ -11,6 +11,7 @@ import { CreateComponent } from './create/create.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { PreviewComponent } from './preview/preview.component';
+import { DialogBoxComponent } from './dialog-box/dialog-box.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { PreviewComponent } from './preview/preview.component';
     NavbarComponent,
     DashboardComponent,
     CreateComponent,
-    PreviewComponent
+    PreviewComponent,
+    DialogBoxComponent
   ],
   imports: [
     BrowserModule,

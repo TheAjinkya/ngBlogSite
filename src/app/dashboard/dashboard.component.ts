@@ -11,12 +11,15 @@ import { DataService } from '../data.service';
 export class DashboardComponent implements OnInit {
 
   constructor(private router : Router, private dataSrc: DataService,
-     private route: ActivatedRoute) { }
+     private route: ActivatedRoute) { 
+      this.blogContent= this.dataSrc.blogData
+     }
 
   blogContent:BlogContent[]=[]
+  message = 'Hello!';
 
   ngOnInit(): void {
-    this.blogContent= this.dataSrc.blogData
+    // this.blogContent= this.dataSrc.blogData
   }
 
   createBlog(){
