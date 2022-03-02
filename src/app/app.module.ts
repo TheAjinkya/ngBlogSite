@@ -12,6 +12,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { PreviewComponent } from './preview/preview.component';
 import { DialogBoxComponent } from './dialog-box/dialog-box.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { DialogBoxComponent } from './dialog-box/dialog-box.component';
     DashboardComponent,
     CreateComponent,
     PreviewComponent,
-    DialogBoxComponent
+    DialogBoxComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

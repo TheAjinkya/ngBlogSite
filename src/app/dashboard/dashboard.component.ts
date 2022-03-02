@@ -1,12 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { BlogContent } from '../blog-content.model';
 import { DataService } from '../data.service';
+import { from } from 'rxjs'; // from function
+
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.scss']
+  styleUrls: ['./dashboard.component.scss'],
 })
 export class DashboardComponent implements OnInit {
 
@@ -16,10 +18,18 @@ export class DashboardComponent implements OnInit {
      }
 
   blogContent:BlogContent[]=[]
-  message = 'Hello!';
+
+
+  data : any = from(fetch('https://jsonplaceholder.typicode.com/todos/1')); //Created from Promise
+  
 
   ngOnInit(): void {
     // this.blogContent= this.dataSrc.blogData
+    // this.data.subscribe({
+    //   next(response:any) { console.log(response); },
+    //   error(err:any) { console.error('Error: ' + err); },
+    //   complete() { console.log('Completed'); }
+    //   });
   }
 
   createBlog(){
