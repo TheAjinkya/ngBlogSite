@@ -30,6 +30,9 @@ export class DashboardComponent implements OnInit {
     //   error(err:any) { console.error('Error: ' + err); },
     //   complete() { console.log('Completed'); }
     //   });
+
+    // localStorage.removeItem('username')
+    // localStorage.removeItem('password')
   }
 
   createBlog(){

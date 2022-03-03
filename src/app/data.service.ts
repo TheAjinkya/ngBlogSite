@@ -18,16 +18,18 @@ export class DataService {
     },
   ];
 
-  // checkLogin(formData:any){
-  //   if(localStorage.getItem('username') == formData.username && localStorage.getItem('password') == formData.password){
-  //     return true
-  //   }else{
-  //     false
-  //   }
-  // }
+  username: string = 'user';
+  password: string = 'user';
 
-  getToken(){
-    return !! localStorage.getItem('username')
+  getToken() {
+    if (
+      localStorage.getItem('username') == this.username &&
+      localStorage.getItem('password') == this.password
+    ) {
+      return true
+    } else {
+      return false
+    }
+    // return !!localStorage.getItem('username');
   }
-
 }

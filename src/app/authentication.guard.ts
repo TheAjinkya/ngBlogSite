@@ -14,15 +14,16 @@ export class AuthenticationGuard implements CanActivate {
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    
+      console.log("In")
       if (this.dataservice.getToken()) {
-        // this.router.navigate[] 
+        console.log("creds matched!")
+        // this.router.navigate(['home']) 
         return true
-      } else {
-        return false;
+      } else{
+        alert("You need to login first!")
+        this.router.navigate(['']) 
+        return false
       }
-    
-
   }
   
 }

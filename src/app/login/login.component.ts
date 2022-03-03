@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { DataService } from '../data.service';
 
 @Component({
@@ -8,21 +9,25 @@ import { DataService } from '../data.service';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private dataservice : DataService) { }
+  constructor(private dataservice : DataService, private router : Router) { }
 
-  username:string = 'user'
-  password:string = 'password'
 
   ngOnInit(): void {
-    localStorage.setItem('user', this.username)
+    localStorage.removeItem('username')
+    localStorage.removeItem('password')
+    
   }
 
   login(username:any, password:any){
-    console.log(username, password)
     let formData = {'username':username, 'password': password}
-    // let result =  this.dataservice.checkLogin(formData)
-    // console.log("result", result)
-
+    console.log(formData)
+    localStorage.setItem('username', username)
+    localStorage.setItem('password', password)
+    if(this.dataservice.getToken()){
+      this.router.navigate(['home']) 
+    }else{
+      alert("Wrong Credentials!")
+    }
   }
 
 }
